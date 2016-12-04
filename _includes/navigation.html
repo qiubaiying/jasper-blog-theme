@@ -9,10 +9,10 @@
     <ul>
         {% for tag in site.tags %}
             {% if tag[1].size > 3 %} 
-                <li class="" role="presentation"><a href="{{ site.baseurl }}tags/{{ tag | first }}">{{ tag | first }}</a></li>
+                <li class="" role="presentation"><a href="{{ tag | first | prepend: '/tag/'' | relative_url }}">{{ tag | first }}</a></li>
             {% endif %}
         {% endfor %}
     </ul>
-    <a class="subscribe-button icon-feed" href="{{ site.baseurl }}feed.xml">Subscribe</a>
+    <a class="subscribe-button icon-feed" href="{{ '/feed.xml' | relative_url }}">Subscribe</a>
 </div>
 <span class="nav-cover"></span>
