@@ -2,9 +2,9 @@
 .DS_Store
 
 # Jekyll build
-/_site/
+_site
 .jekyll-metadata
-#Gemfile.lock
+Gemfile.lock
 
 # webstorm
 .idea/
@@ -17,6 +17,7 @@
 *.rbc
 .bundle
 .config
+.sass-cache
 coverage
 InstalledFiles
 lib/bundler/man
