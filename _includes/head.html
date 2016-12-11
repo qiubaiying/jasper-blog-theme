@@ -7,21 +7,27 @@
     <meta property="og:title" content="{{ site.name }}" />
     <meta property="og:description" content="{{ site.description }}" />
     <meta property="og:url" content="{{ site.baseurl }}" />
-    <meta property="og:image" content="{{ site.twitter_card_image | relative_url }}" />
+    {% if page.cover %}
+    <meta property="og:image" content="{{ page.cover | relative_url }}" />
+    {% endif %}
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="{{ site.name }}" />
     <meta name="twitter:description" content="{{ site.description }}" />
     <meta name="twitter:url" content="{{ site.baseurl }}" />
-    <meta name="twitter:image:src" content="{{ site.twitter_card_image | relative_url }}'" />
+    {% if page.cover %}
+    <meta name="twitter:image:src" content="{{ page.cover | relative_url }}" />
+    {% endif %}
 
     <script type="application/ld+json">
 {
     "@context": "http://schema.org",
     "@type": "Website",
-    "publisher": "Finding The Way Home",
+    "publisher": "iwantmyrealname",
     "url": "{{ site.baseurl }}",
-    "image": "{{ site.twitter_card_image | relative_url }}",
+    {% if page.cover %}
+    "image": "{{ page.cover | relative_url }}",
+    {% endif %}
     "description": "{{ site.description }}"
 }
     </script>
