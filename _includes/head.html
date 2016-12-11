@@ -8,7 +8,7 @@
     <meta property="og:description" content="{{ site.description }}" />
     <meta property="og:url" content="{{ site.baseurl }}" />
     {% if page.cover %}
-    <meta property="og:image" content="{{ page.cover | relative_url }}" />
+    <meta property="og:image" content="{{ site.url }}{{ page.cover | relative_url }}" />
     {% endif %}
 
     <meta name="twitter:card" content="summary_large_image" />
@@ -16,7 +16,7 @@
     <meta name="twitter:description" content="{{ site.description }}" />
     <meta name="twitter:url" content="{{ site.baseurl }}" />
     {% if page.cover %}
-    <meta name="twitter:image:src" content="{{ page.cover | relative_url }}" />
+    <meta name="twitter:image:src" content="{{ site.url }}{{ page.cover | relative_url }}" />
     {% endif %}
 
     <script type="application/ld+json">
@@ -24,9 +24,9 @@
     "@context": "http://schema.org",
     "@type": "Website",
     "publisher": "iwantmyrealname",
-    "url": "{{ site.baseurl }}",
+    "url": "{{ site.url }}{{ site.baseurl }}",
     {% if page.cover %}
-    "image": "{{ page.cover | relative_url }}",
+    "image": "{{ site.url }}{{ page.cover | relative_url }}",
     {% endif %}
     "description": "{{ site.description }}"
 }
