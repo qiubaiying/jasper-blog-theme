@@ -4,16 +4,17 @@
 
     <meta property="og:site_name" content="{{ site.name }}" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="{{ site.name }}" />
-    <meta property="og:description" content="{{ site.description }}" />
+    <meta property="og:title" content="{% if page.title %}{{ page.title }}{% elsif site.name %}{{ site.name }}{% endif %}" />
+    <meta property="og:description" content="{% if page.description %}{{ page.description }}{% elsif site.description %}{{ site.description }}{% endif %}" />
     <meta property="og:url" content="{{ site.baseurl }}" />
     {% if page.cover %}
     <meta property="og:image" content="{{ site.url }}{{ page.cover | relative_url }}" />
     {% endif %}
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="{{ site.name }}" />
-    <meta name="twitter:description" content="{{ site.description }}" />
+    <meta name="twitter:site" content="{{ site.twitter_username }}"
+    <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% elsif site.name %}{{ site.name }}{% endif %}" />
+    <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% elsif site.description %}{{ site.description }}{% endif %}" />
     <meta name="twitter:url" content="{{ site.baseurl }}" />
     {% if page.cover %}
     <meta name="twitter:image:src" content="{{ site.url }}{{ page.cover | relative_url }}" />
@@ -28,7 +29,7 @@
     {% if page.cover %}
     "image": "{{ site.url }}{{ page.cover | relative_url }}",
     {% endif %}
-    "description": "{{ site.description }}"
+    "description": "{% if page.description %}{{ page.description }}{% elsif site.description %}{{ site.description }}{% endif %}"
 }
     </script>
 
